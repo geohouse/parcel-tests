@@ -37,3 +37,4 @@ For example, in this package.json file:
 }
 
 When `npm start` is invoked from the command line (or otherwise) for this project, that will run the script specified under the 'start' command in the package.json file, and will start the web development server by calling `npx parcel` (which displays on http://localhost:1234).
+

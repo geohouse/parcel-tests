@@ -1,0 +1,20 @@
+For GitHub automated testing, steps need to be specified in YAML and the npm steps can mainly (fully?) be taken from the package.json file - example below.
+
+There's a full YAML example of a starter workflow for GitHub CI here:
+https://github.com/actions/starter-workflows/blob/main/ci/node.js.yml
+
+
+( This will come into having GitHub actions run automated build/test code that I specify - 
+https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+You can use the same commands that you use locally to build and test your code. For example, if you run npm run build to run build steps defined in your package.json file and npm test to run your test suite, you would add those commands in your workflow file.
+
+steps:
+- uses: actions/checkout@v3
+- name: Use Node.js
+  uses: actions/setup-node@v3
+  with:
+    node-version: '12.x'
+- run: npm install
+- run: npm run build --if-present
+- run: npm test
