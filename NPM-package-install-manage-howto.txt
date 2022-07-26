@@ -1,0 +1,10 @@
+Using NPM for local package installation for a specific project (and project folder) and setting Git to not track the installed packages for the specific project
+
+NPM downloads all files for the installed packages to a folder called `node_modules` that is inside the project folder (the folder where we ran the npm install command). This means that package is installed locally within the project folder.
+
+The `node_modules` folder only contains the external code of the locally installed packages, and therefore shouldn't be tracked with Git. (If need to restore the locally installed packages, can use the `package-lock.json` file that keeps track of the package names and versions. To re-install using the `package-lock.json` file, run `npm install` within the project folder).
+
+To ignore the folder, enter:
+node_modules/
+
+into the project folder's .gitignore file.
