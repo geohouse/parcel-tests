@@ -8,3 +8,32 @@ To ignore the folder, enter:
 node_modules/
 
 into the project folder's .gitignore file.
+
+Using NPM to download packages (called from within the project's parent folder):
+npm install <package> 
+
+If the package is needed for development but not later deployment/use, use:
+npm install --save-dev <package>
+
+This will still add the package to the project's `package.json` file, but as a devDependency only.
+
+If starting a new project from scratch without importing other projects with npm, run
+`npm init` 
+and will walk through steps needed to initialize the project (name/license/testing, etc) and to build the package.json file automatically.
+
+Can add scripts to run automatically with specific npm commands (https://docs.npmjs.com/cli/v8/commands) by editing the package.json file. The scripts to run can be anything, and are run when specific npm commands are invoked.
+
+For example, in this package.json file:
+{
+  "name": "Test Parcel project",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "npx parcel",
+    "build": "npx parcel build"
+  },
+  "devDependencies": {
+    "parcel": "^2.6.2"
+  }
+}
+
+When `npm start` is invoked from the command line (or otherwise) for this project, that will run the script specified under the 'start' command in the package.json file, and will start the web development server by calling `npx parcel` (which displays on http://localhost:1234).

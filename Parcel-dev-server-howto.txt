@@ -1,0 +1,6 @@
+Parcel comes bundled with a development server. To access, within the parent directory of the project (where Parcel has already been installed), run:
+npx parcel <relative path to html file to display>
+
+e.g. npx parcel src/index.html
+
+Then go to http://localhost:1234 to see the rendered HTML. The page will auto-refresh with any changes made. 

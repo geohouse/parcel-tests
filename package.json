@@ -1,0 +1,11 @@
+{
+  "name": "Test Parcel project",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "npx parcel",
+    "build": "npx parcel build"
+  },
+  "devDependencies": {
+    "parcel": "^2.6.2"
+  }
+}
